@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Settings</string>
+
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System</string>
+    <string name="cd_go_back">Go back to previous screen</string>
+    <string name="title_settings">Settings</string>
+</resources>
