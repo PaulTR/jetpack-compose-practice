@@ -11,4 +11,26 @@
     <string name="cd_notifications_disabled">Notifications Disabled</string>
 
     <string name="setting_enable_notifications">Enable Notifications</string>
+    <string name="settings_show_hints">Show Hints</string>
+    <string name="cd_hints_enabled">Hints Enabled</string>
+    <string name="cd_hints_disabled">Hints Disabled</string>
+
+    <string name="cd_open_subscription">Open Subscription Management</string>
+
+    <string name="settings_manage_subscription">Manage Subscription</string>
+
+    <string-array name="setting_options_marketing_choice">
+        <item>Opt-in for marketing emails</item>
+        <item>Don\'t send me emails</item>
+    </string-array>
+
+    <string name="setting_option_marketing">
+        Receive marketing emails?
+    </string>
+
+    <string name="setting_option_theme">Theme</string>
+    <string name="cd_select_theme">Select theme</string>
+
+    <string name="setting_app_version_title">App Version</string>
+    <string name="setting_app_version">v1.1</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.settings
 
 import SettingsState
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.settings.models.MarketingOption
 import com.example.settings.models.Theme
@@ -15,6 +16,10 @@ class SettingsViewModel : ViewModel() {
 
     fun toggleHintSettings() {
         uiState.value = uiState.value.copy(hintsEnabled = !uiState.value.hintsEnabled)
+    }
+
+    fun onManageSubscription() {
+        Log.e("Test", "on manage subscription")
     }
 
     fun setMarketingSettings(option: MarketingOption) {
