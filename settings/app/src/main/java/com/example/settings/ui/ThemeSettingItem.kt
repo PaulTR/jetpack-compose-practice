@@ -13,10 +13,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import com.example.settings.R
+import com.example.settings.models.Tags.TAG_SELECT_THEME
+import com.example.settings.models.Tags.TAG_THEME
+import com.example.settings.models.Tags.TAG_THEME_OPTION
 import com.example.settings.models.Theme
 
 @Composable
@@ -33,14 +37,17 @@ fun ThemeSettingItem(
                     onClick = { expanded = !expanded },
                     onClickLabel = stringResource(id = R.string.cd_select_theme)
                 )
-                .padding(16.dp),
+                .padding(16.dp)
+                .testTag(TAG_SELECT_THEME),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 modifier = Modifier.weight(1f),
                 text = stringResource(id = R.string.setting_option_theme)
             )
-            Text(text = stringResource(id = selectedTheme.label))
+            Text(
+                modifier = Modifier.testTag(TAG_THEME),
+                text = stringResource(id = selectedTheme.label))
         }
         DropdownMenu(
             expanded = expanded,
@@ -51,7 +58,7 @@ fun ThemeSettingItem(
                 DropdownMenuItem(onClick = {
                     onOptionsSelected(theme)
                     expanded = false
-                }) {
+                }, modifier = Modifier.testTag(TAG_THEME_OPTION + theme.label)) {
                     Text(text = stringResource(id = theme.label))
                 }
             }

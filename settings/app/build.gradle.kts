@@ -73,5 +73,11 @@ dependencies {
     implementation("androidx.compose.material:material-android:1.6.8")
 
 
+    //androidTestImplementation("androidx.compose.ui:ui-testjunit4:1.6.8")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.8")
+    // https://mvnrepository.com/artifact/org.mockito/mockito-core
+    androidTestImplementation("org.mockito:mockito-core:5.11.0")
+    androidTestImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
+    androidTestImplementation("org.mockito:mockito-android:5.12.0")
 
 }
