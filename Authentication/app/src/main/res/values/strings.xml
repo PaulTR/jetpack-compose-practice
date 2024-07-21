@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Authentication</string>
+
+    <string name="password_requirement_characters">
+        At least 8 characters
+    </string>
+
+    <string name="password_requirement_capital">
+        At least 1 upper-case letter
+    </string>
+
+    <string name="password_requirement_digit">
+        At least 1 digit
+    </string>
+</resources>
