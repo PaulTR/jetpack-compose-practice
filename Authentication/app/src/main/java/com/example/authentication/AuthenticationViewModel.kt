@@ -1,14 +1,33 @@
 package com.example.authentication
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.authentication.models.AuthenticationMode
 import com.example.authentication.models.AuthenticationState
 import com.example.authentication.models.PasswordRequirements
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class AuthenticationViewModel : ViewModel() {
 
     val uiState = MutableStateFlow(AuthenticationState())
+
+    private fun authenticate() {
+        uiState.value = uiState.value.copy(isLoading = true)
+
+        viewModelScope.launch(Dispatchers.IO) {
+            delay(2000L)
+            withContext(Dispatchers.Main) {
+                uiState.value = uiState.value.copy(
+                    isLoading = false,
+                    error = "Something went wrong!"
+                )
+            }
+        }
+    }
 
     private fun toggleAuthenticationMode() {
         val authenticationMode = uiState.value.authenticationMode
@@ -56,7 +75,19 @@ class AuthenticationViewModel : ViewModel() {
             is AuthenticationEvent.PasswordChanged -> {
                 updatePassword(authenticationEvent.password)
             }
+
+            is AuthenticationEvent.Authenticate -> {
+                authenticate()
+            }
+
+            is AuthenticationEvent.ErrorDismissed -> {
+                dismissError()
+            }
         }
+    }
+
+    private fun dismissError() {
+        uiState.value = uiState.value.copy(error = null)
     }
 
 }
