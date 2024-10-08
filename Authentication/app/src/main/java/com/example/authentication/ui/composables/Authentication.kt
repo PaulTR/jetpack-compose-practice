@@ -42,7 +42,11 @@ fun AuthenticationContent(
         } else {
             AuthenticationForm(
                 modifier = Modifier.fillMaxSize(),
-                authenticationMode = authenticationState.authenticationMode
+                authenticationMode = authenticationState.authenticationMode,
+                email = authenticationState.email,
+                onEmailChanged = {
+                    email -> handleEvent(AuthenticationEvent.EmailChanged(email))
+                }
             )
         }
     }

@@ -15,4 +15,5 @@
 
     <string name="label_sign_in_to_account">Sign IN to your account</string>
     <string name="label_sign_up_for_account">Sign Up for an account</string>
+    <string name="label_email">Email Address</string>
 </resources>
