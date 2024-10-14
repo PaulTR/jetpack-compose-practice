@@ -16,4 +16,9 @@
     <string name="label_sign_in_to_account">Sign IN to your account</string>
     <string name="label_sign_up_for_account">Sign Up for an account</string>
     <string name="label_email">Email Address</string>
+
+    <string name="label_password">Password</string>
+
+    <string name="cd_show_password">Show Password</string>
+    <string name="cd_hide_password">Hide Password</string>
 </resources>
